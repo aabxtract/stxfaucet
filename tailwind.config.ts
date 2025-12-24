@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['monospace'],
+        body: ['"Space Grotesk"', 'sans-serif'],
+        headline: ['"Space Grotesk"', 'sans-serif'],
+        code: ['"Space Grotesk"', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -88,10 +88,30 @@ export default {
             height: '0',
           },
         },
+        'pulse-glow': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary))',
+          },
+          '50%': {
+            transform: 'scale(1.02)',
+            boxShadow: '0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary))',
+          },
+        },
+         glitch: {
+            '0%': { transform: 'translate(0)', opacity: '1' },
+            '20%': { transform: 'translate(-3px, 3px)', opacity: '0.8' },
+            '40%': { transform: 'translate(3px, -3px)' },
+            '60%': { transform: 'translate(-3px, -3px)', opacity: '0.9' },
+            '80%': { transform: 'translate(3px, 3px)' },
+            '100%': { transform: 'translate(0)', opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',
+        'glitch': 'glitch 0.25s linear forwards',
       },
     },
   },
